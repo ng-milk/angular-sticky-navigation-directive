@@ -41,7 +41,7 @@ See [index.html](https://github.com/ng-milk/angular-sticky-navigation-directive/
   }
 </style>
 
-<article ng-app="md.ngSticky">
+<article ng-app="app">
   <section sticky-nav>
     <button class="btn btn-primary">Review</button>
     <button class="btn btn-danger">Delete</button>
