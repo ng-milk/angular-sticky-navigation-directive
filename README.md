@@ -49,3 +49,11 @@ See [index.html](https://github.com/ng-milk/angular-sticky-navigation-directive/
 </article>
 ```
 
+## About ngmilk
+<img src="http://ngmilk.rocks/content/images/2014/10/111-1.jpg" width="200px"/>
+
+**ngmilk** is the place to go for fresh front-end articles, with a focus on AngularJS.
+See more on [ngmilk.rocks](https://ngmilk.rocks)
+
+Follow [@ngmilkrocks](http://twitter.com/ngmilkrocks) on Twitter to stay ahead of the game.
+
