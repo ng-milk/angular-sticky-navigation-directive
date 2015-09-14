@@ -1,0 +1,26 @@
+{
+  "name": "angular-sticky-navigation-directive",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ng-milk/angular-sticky-navigation-directive",
+  "authors": [
+    "Dan Mindru <mindrudan@gmail.com>"
+  ],
+  "description": "Angular directive to make a sticky element, read more on https://ngmilk.rocks/2015/04/09/angularjs-sticky-navigation-directive/",
+  "main": "ng-sticky.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "sticky",
+    "navigation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ]
+}
