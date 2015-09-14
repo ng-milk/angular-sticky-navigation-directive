@@ -5,7 +5,7 @@
  */
 
 angular.module('dm.stickyNav', [])
-       .directive('sticky-nav', stickyNavDirective);
+       .directive('stickyNav', stickyNavDirective);
 
 stickyNavDirective.$inject = ['$window'];
 function stickyNavDirective($window){
