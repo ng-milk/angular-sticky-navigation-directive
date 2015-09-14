@@ -1,13 +1,18 @@
 # Angular sticky navigation directive
+![Angular sticky navigation directive demo](http://cdn.makeagif.com/media/9-14-2015/D7S9Ra.gif)
+
+
 ### [Quick Demo](http://ng-milk.github.io/angular-sticky-navigation-directive/)
 Angular directive to make a sticky element, read about it on [here](https://ngmilk.rocks/2015/04/09/angularjs-sticky-navigation-directive/).
 It will add a `ng-sticky-fixed` class whenever your navigation is not visible on the viewport (therefore it will make it visible & sticky).
 It's up to you to style the class properly, see the example for more.
 
+
 ## Usage
 1. Include `ng-sticky.js`.
 2. Add `dm.stickyNav` as a dependency to your app.
 3. Profit!
+
 
 ## Bower
 Installable via `bower`:
