@@ -4,6 +4,7 @@ var del = require('del'),
     gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     eslint = require('gulp-eslint');
 
 var options = {
@@ -15,6 +16,7 @@ gulp.task('scripts', function () {
   return gulp.src([options.src + '/**/*.js'])
     .pipe(eslint())
     .pipe(uglify())
+    .pipe(rename('ng-sticky.js'))
     .pipe(gulp.dest(options.dist));
 });
 
