@@ -20,10 +20,10 @@ function stickyNavDirective($window){
      * otherwise we display them inline
      */
     function toggleStickyNav(){
-      if(!element.hasClass('controls-fixed') && $window.pageYOffset > top + size){
-        element.addClass('controls-fixed');
-      } else if(element.hasClass('controls-fixed') && $window.pageYOffset <= top + size){
-        element.removeClass('controls-fixed');
+      if(!element.hasClass('ng-sticky-fixed') && $window.pageYOffset > top + size){
+        element.addClass('ng-sticky-fixed');
+      } else if(element.hasClass('ng-sticky-fixed') && $window.pageYOffset <= top + size){
+        element.removeClass('ng-sticky-fixed');
       }
     }
 
@@ -34,7 +34,7 @@ function stickyNavDirective($window){
     scope.$watch(function(){
       return element[0].getBoundingClientRect().top + $window.pageYOffset;
     }, function(newValue, oldValue){
-      if(newValue !== oldValue && !element.hasClass('controls-fixed')){
+      if(newValue !== oldValue && !element.hasClass('ng-sticky-fixed')){
         top = newValue;
       }
     });
@@ -46,7 +46,7 @@ function stickyNavDirective($window){
      * fixing the controls again if needed.
      */
     w.bind('resize', function stickyNavResize(){
-      element.removeClass('controls-fixed');
+      element.removeClass('ng-sticky-fixed');
       top = element[0].getBoundingClientRect().top + $window.pageYOffset;
       toggleStickyNav();
     });
