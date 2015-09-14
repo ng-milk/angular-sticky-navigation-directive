@@ -9,10 +9,12 @@ angular.module('dm.stickyNav', [])
 
 stickyNavDirective.$inject = ['$window'];
 function stickyNavDirective($window){
-  function stickyNavLink(scope, element){
+  function stickyNavLink(scope, element, attrs){
     var w = angular.element($window),
         size = element[0].clientHeight,
-        top = 0;
+        top = 0,
+        defaultStickyClass = 'ng-sticky-fixed',
+        stickyClass = attrs.stickyNav || defaultStickyClass;
 
     /*
      * On scroll we just check the page offset
@@ -20,10 +22,10 @@ function stickyNavDirective($window){
      * otherwise we display them inline
      */
     function toggleStickyNav(){
-      if(!element.hasClass('ng-sticky-fixed') && $window.pageYOffset > top + size){
-        element.addClass('ng-sticky-fixed');
-      } else if(element.hasClass('ng-sticky-fixed') && $window.pageYOffset <= top + size){
-        element.removeClass('ng-sticky-fixed');
+      if(!element.hasClass(stickyClass) && $window.pageYOffset > top + size){
+        element.addClass(stickyClass);
+      } else if(element.hasClass(stickyClass) && $window.pageYOffset <= top + size){
+        element.removeClass(stickyClass);
       }
     }
 
@@ -34,7 +36,7 @@ function stickyNavDirective($window){
     scope.$watch(function(){
       return element[0].getBoundingClientRect().top + $window.pageYOffset;
     }, function(newValue, oldValue){
-      if(newValue !== oldValue && !element.hasClass('ng-sticky-fixed')){
+      if(newValue !== oldValue && !element.hasClass(stickyClass)){
         top = newValue;
       }
     });
@@ -46,7 +48,7 @@ function stickyNavDirective($window){
      * fixing the controls again if needed.
      */
     w.bind('resize', function stickyNavResize(){
-      element.removeClass('ng-sticky-fixed');
+      element.removeClass(stickyClass);
       top = element[0].getBoundingClientRect().top + $window.pageYOffset;
       toggleStickyNav();
     });

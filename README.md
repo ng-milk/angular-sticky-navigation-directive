@@ -53,6 +53,26 @@ See [index.html](https://github.com/ng-milk/angular-sticky-navigation-directive/
 </article>
 ```
 
+## Custom sticky class
+By default `ng-sticky-fixed` will be appended to the element's class. By providing a value to the `sticky-nav` attribute you can use any other class:
+
+```html
+[...]
+<style>
+  .custom-class{
+    /* ... */
+  }
+</style>
+
+<article ng-app="app">
+  <section sticky-nav="custom-class">
+    [...]
+  </section>
+  [...]
+</article>
+```
+
+
 ## About ngmilk
 <img src="http://ngmilk.rocks/content/images/2014/10/111-1.jpg" width="200px"/>
 
