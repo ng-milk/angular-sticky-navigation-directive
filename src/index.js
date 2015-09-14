@@ -1,5 +1,5 @@
 /*
- * angular-sticky-navigation-directive v0.0.1
+ * angular-sticky-navigation-directive v0.0.2
  * (c) 2015 Dan Mindru http://mindrudan.com
  * License: MIT
  */
