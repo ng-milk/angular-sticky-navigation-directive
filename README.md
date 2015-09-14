@@ -25,6 +25,10 @@ bower install ng-sticky
 See [index.html](https://github.com/ng-milk/angular-sticky-navigation-directive/blob/master/index.html) for an example.
 
 ```html
+<script>
+  angular.module('app', ['dm.stickyNav']);
+</script>
+
 <style>
   .ng-sticky-fixed{
     background-color:rgba(0, 0, 0, 0.1);
