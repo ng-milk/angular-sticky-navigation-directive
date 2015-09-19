@@ -6,15 +6,31 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Not required: font-awesome is used to display button icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <style>
     body{
       padding:60px 30px 0 30px;
+      color:white;
+
+      background: -webkit-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* W3C */
+    }
+
+    h1{
+      font-size:1.6em;
+      font-weight: 300;
+      margin-bottom:30px;
     }
 
     p{
       margin-bottom:80px;
       max-width:400px;
+      color:#CED3E0;
     }
 
     [sticky-nav]{
@@ -39,8 +55,8 @@
 </head>
   <body class="container-fluid" ng-app="app">
     <section sticky-nav="sticky">
-      <a class="btn btn-primary" href="https://github.com/ng-milk/angular-sticky-navigation-directive">View on Github</a>
-      <a class="btn btn-danger" href="https://github.com/ng-milk/angular-sticky-navigation-directive/issues">Submit an issue</a>
+      <a class="btn btn-primary" href="https://github.com/ng-milk/angular-sticky-navigation-directive"><i class="fa fa-code-fork"></i> Fork on Github</a>
+      <a class="btn btn-default" href="https://github.com/ng-milk/angular-sticky-navigation-directive/issues"><i class="fa fa-bug"></i> Submit an issue</a>
     </section>
 
     <section ng-controller="ctrl" ng-repeat="a in '123456789'">
@@ -55,8 +71,8 @@
       angular
         .module('app', ['dm.stickyNav'])
         .controller('ctrl', ['$scope', function($scope){
-         $scope.h1 = "Hey Now";
-         $scope.p = "Conveniently drive an expanded array of sources whereas ethical expertise. Proactively target multifunctional methods of empowerment for process-centric best practices. Continually strategize process-centric human capital and user friendly vortals. Conveniently revolutionize alternative e-business via fully tested data.";
+         $scope.h1 = "Angular sticky nav demo";
+         $scope.p = "Scroll down to see it in action. Conveniently drive an expanded array of sources whereas ethical expertise. Proactively target multifunctional methods of empowerment for process-centric best practices. Continually strategize process-centric human capital and user friendly vortals. Conveniently revolutionize alternative e-business via fully tested data.";
         }]);
     </script>
   </body>

@@ -1,5 +1,5 @@
 /*
- * angular-sticky-navigation-directive v0.0.3
+ * angular-sticky-navigation-directive v0.0.5
  * (c) 2015 Dan Mindru http://mindrudan.com
  * License: MIT
  */
@@ -7,6 +7,7 @@
 angular.module('dm.stickyNav', [])
        .directive('stickyNav', stickyNavDirective);
 
+//Inject $window so we won't have a bad time during uglyfication.
 stickyNavDirective.$inject = ['$window'];
 function stickyNavDirective($window){
   function stickyNavLink(scope, element, attrs){
