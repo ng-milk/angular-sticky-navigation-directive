@@ -1,6 +1,6 @@
 {
   "name": "angular-sticky-navigation-directive",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Angular directive to make a sticky element, read more on https://ngmilk.rocks/2015/04/09/angularjs-sticky-navigation-directive/",
   "main": "src/index.js",
   "scripts": {
@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/ng-milk/angular-sticky-navigation-directive/issues"
   },
-  "homepage": "https://github.com/ng-milk/angular-sticky-navigation-directive#readme"
+  "homepage": "https://github.com/ng-milk/angular-sticky-navigation-directive#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sync": "^0.1.4",
+    "gulp-uglify": "^1.5.1"
+  }
 }
