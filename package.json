@@ -18,6 +18,12 @@
     "navigation"
   ],
   "author": "Dan Mindru <mindrudan@gmail.com> (http://mindrudan.com/)",
+  "contributors": [
+    {
+      "name" : "Luciano Lattes",
+      "url" : "https://github.com/llattes"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ng-milk/angular-sticky-navigation-directive/issues"
