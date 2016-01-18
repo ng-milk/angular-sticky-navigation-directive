@@ -1,7 +1,11 @@
 /*
- * angular-sticky-navigation-directive v0.0.5
- * (c) 2015 Dan Mindru http://mindrudan.com
+ * angular-sticky-navigation-directive v0.0.7
+ * (c) 2015 Dan Mindru <http://mindrudan.com>
  * License: MIT
+ *
+ *
+ * Thanks for contributions:
+ * - Luciano Lattes <https://github.com/llattes>
  */
 
 angular.module('dm.stickyNav', [])
@@ -82,7 +86,7 @@ function stickyNavDirective($window, $timeout, $document){
         }
       });
 
-      /*
+    /*
      * We update the size -> this is for initial page load,
      * while elements load
      */
