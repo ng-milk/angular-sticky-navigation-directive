@@ -71,7 +71,17 @@ By default `ng-sticky-fixed` will be appended to the element's class. By providi
   [...]
 </article>
 ```
+## Additional directive attributes
+By default, the directive will attempt a 100 milliseconds $timeout call to wait for the DOM to load. You can provide different values for retrying until DOM is ready using `max-tries` and `ms-retry-delay`:
 
+```html
+<div sticky-nav="custom-class" max-tries="5" ms-retry-delay="200"/>
+```
+When you don't want to use the height of your sticky element as part of the threshold for applying the sticky class, you can add the `ignore-element-size` directive attribute. It is useful for 'tall' elements like sidebars or side menus.
+
+```html
+<div sticky-nav="custom-class" ignore-element-size/>
+```
 
 ## About ngmilk
 <img src="http://ngmilk.rocks/content/images/2014/10/111-1.jpg" width="200px"/>
