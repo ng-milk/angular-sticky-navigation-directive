@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular sticky sidebar demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Not required: font-awesome is used to display button icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+      body{
+        background: -webkit-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Chrome 10+, Saf5.1+ */
+        background:    -moz-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* FF3.6+ */
+        background:     -ms-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* IE10 */
+        background:      -o-linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* Opera 11.10+ */
+        background:         linear-gradient(90deg, #606c88 10%, #3f4c6b 90%); /* W3C */
+        color:white;
+      }
+
+      h1{
+        font-weight:300;
+        font-size:1.6em;
+        margin-bottom:30px;
+      }
+
+      h2{
+        font-weight:300;
+        font-size:1.4em;
+        margin-bottom:20px;
+      }
+
+      p{
+        color:#ced3e0;
+        max-width:400px;
+      }
+
+      p.example{
+        margin-bottom: 30px;
+      }
+
+      header{
+        background-color:black;
+        color:white;
+        max-height:80px;
+        padding:5px;
+        text-align:center;
+      }
+
+      nav{
+        background-color:#eeeeee;
+        color:#606c88;
+        float:right;
+        line-height:30px;
+        min-height:100vh;
+        padding:20px;
+        width:400px;
+      }
+
+      section{
+        padding:10px;
+        width:100%;
+      }
+
+      section a{
+        color:#c0ffee;
+      }
+
+      section a:hover{
+        color:#c0ffee;
+        text-decoration:underline;
+      }
+
+      [ng-click] {
+        cursor:pointer;
+      }
+
+      .ng-sticky-behaviour{
+        border:2px solid #32a9d0;
+        height:100%;
+        overflow-y:auto;
+        position:fixed;
+        right:0;
+        top:0;
+        width:400px;
+      }
+    </style>
+  </head>
+
+  <body ng-app="app" ng-controller="ctrl">
+    <header>
+      <h1><i class="fa fa-code"></i>&nbsp;Layout with a sticky right sidebar</h1>
+    </header>
+
+    <!-- .ng-sticky-behaviour is our custom sticky class -->
+    <nav sticky-nav="ng-sticky-behaviour" ignore-element-size>
+      <h2>Sticky sidebar</h2>
+      <p style="color:#32a9d0;">Sidebar will be decorated with a border when 'stickyness' is active.</p>
+      <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 1</p>
+      <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 2</p>
+      <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 3</p>
+      <a ng-click="addMoreOptions()" ng-if="!showMoreOptions">Click to add more stuff to sidebar...</a>
+      <a ng-click="removeMoreOptions()" ng-if="showMoreOptions">Remove added stuff...</a>
+      <div ng-if="showMoreOptions" style="padding-top: 10px;">
+        <p style="color:#e27d30;">
+          <i class="fa fa-info-circle"></i>&nbsp;Content exceeding sidebar height should not cause a scrolling issue.
+        </p>
+        <p style="color:#e27d30;">
+          <i class="fa fa-info-circle"></i>&nbsp;Adding `overflow-y:auto` to your sticky class should allow working through it.
+        </p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 4</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 5</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 6</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 7</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 8</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 9</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 10</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 11</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 12</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 13</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 14</p>
+        <p style="color:#606c88;"><i class="fa fa-arrow-right"></i>&nbsp;Option 15</p>
+      </div>
+    </nav>
+
+    <section>
+      <h1>Page's main content</h1>
+      <p class="example">
+        <a class="btn btn-default" href="index.html"><i class="fa fa-eye"></i></i> See sticky nav example</a>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ante nec quam euismod malesuada. Nullam ullamcorper eros mi, eu feugiat orci egestas sed. Suspendisse condimentum ultrices arcu, id varius dolor tincidunt eu. Integer a aliquet nisl.
+      </p>
+      <p>
+        Vivamus eleifend tincidunt nisl, sagittis pharetra tortor finibus id. Donec a egestas est, ac varius ipsum. Quisque quis pulvinar metus. Maecenas semper est vulputate, volutpat libero id, mollis felis. Aliquam varius mattis dolor vel iaculis. Maecenas varius, lectus in congue gravida, erat sapien mattis nunc, at congue neque mauris vel orci.
+      </p>
+      <a ng-click="addMoreContent()" ng-if="!showMoreContent">Click to add content and see ng-sticky in action...</a>
+      <a ng-click="removeMoreContent()" ng-if="showMoreContent">Remove added content...</a>
+      <section ng-repeat="a in '123456789'" ng-if="showMoreContent">
+        <h1 ng-bind="h1"></h1>
+        <p ng-bind="p"></p>
+      </section>
+    </section>
+
+    <!-- Local JS -->
+    <script src="dist/ng-sticky.js"></script>
+    <script>
+      angular
+        .module('app', ['dm.stickyNav'])
+        .controller('ctrl', ['$scope', function($scope){
+          $scope.showMoreContent = false;
+          $scope.showMoreOptions = false;
+
+          $scope.addMoreContent = function addMoreContent() {
+            $scope.showMoreContent = true;
+          };
+          $scope.removeMoreContent = function removeMoreContent() {
+            $scope.showMoreContent = false;
+          };
+          $scope.addMoreOptions = function addMoreOptions() {
+            $scope.showMoreOptions = true;
+          };
+          $scope.removeMoreOptions = function removeMoreOptions() {
+            $scope.showMoreOptions = false;
+          };
+
+          $scope.h1 = "Angular sticky sidebar demo";
+          $scope.p = "Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Scroll down to see it in action. Thanks!";
+          $scope.p1 += "Content exceeding sidebar height should not be an issue";
+          $scope.p2 += "Adding `overflow-y:auto` to sticky class should do the trick";
+        }]);
+    </script>
+  </body>
+</html>
